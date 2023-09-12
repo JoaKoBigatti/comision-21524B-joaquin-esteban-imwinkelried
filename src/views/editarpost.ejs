@@ -13,7 +13,7 @@
     <form method="post" action="/api/post/<%= post.id %>?_method=PUT">
         <input type="text" name="title" value="<%= post.title %>" placeholder="@Titulo del post"><br>
         <textarea name="content" id="" cols="30" rows="10"><%= post.content %></textarea><br>
-        <input type="text" name="img" value="<%= post.text %>" placeholder="@link de la imagen"><br>
+        <input type="text" name="img" value="<%= post.img %>" placeholder="@link de la imagen"><br>
         <input type="text" name="author" value="<%= post.author %>" placeholder="@author"><br>
         <button type="submit">Postear edicion</button>
     </form>
