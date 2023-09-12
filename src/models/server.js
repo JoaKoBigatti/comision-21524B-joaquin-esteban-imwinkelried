@@ -2,8 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const { sequelize } = require('../database/config.db');
+const methodOverride = require('method-override')
 const path = require('node:path');
 const { PostModel } = require('./posts');
+const { borrarPost } = require('../controllers/posts.controller');
 require('./posts');
 
 class Server {
@@ -23,6 +25,7 @@ class Server {
     middlewares() {
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended:false}))
+        this.app.use(methodOverride('_method'))
         this.app.use(cors());
         this.app.use(morgan('dev'));
         this.app.use(express.static('public'));
@@ -34,6 +37,15 @@ class Server {
         })
         this.app.get('/crearpost',async(req,res)=>{
             res.render('./crearPost')
+        })
+        this.app.get('/eliminarpost/:id',async(req,res)=>{
+            borrarPost(req,res)
+            res.redirect('/')
+        })
+        this.app.get('/editarpost/:id',async(req,res)=>{
+            const {id}=req.params;
+            const post=await PostModel.findOne({ where: { id: id } });
+            res.render('./editarPost',{post})
         })
 
     }

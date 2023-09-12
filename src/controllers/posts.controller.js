@@ -17,4 +17,21 @@ const listPosts=async(req=request,res=response)=>{
     res.json(allPosts);
 }
 
-module.exports={crearPost,listPosts}
+const acturalizarPost = async (req = request, res = response) => {
+    const {id}=req.params;
+    const { title, content, author, img } = req.body
+    const post = { title, content, author, img }
+    await PostModel.update(post,{where: { id: id }})
+
+    res.redirect('/')
+
+};
+
+const borrarPost=async(req=request, res=response)=> {
+    const {id}=req.params;
+    PostModel.destroy({
+        where : {id:id}
+    })
+};
+
+module.exports={crearPost,listPosts,borrarPost,acturalizarPost}

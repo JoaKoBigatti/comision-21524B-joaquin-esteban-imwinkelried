@@ -3,5 +3,7 @@
     <span><%= post.content %></span><br><br>
     <img src="<%= post.img %>" alt="" height="300px"><br>
     Autor: <%= post.author %> <%= post.createdAt.toLocaleString() %>
+    - <a href="/editarpost/<%= post.id %>">editar</a> -
+    <a href="/eliminarpost/<%= post.id %>">eliminar</a>
 </li>
 <hr>
