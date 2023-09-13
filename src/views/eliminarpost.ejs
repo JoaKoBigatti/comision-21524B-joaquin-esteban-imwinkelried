@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Post</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1 class="display-4">Eliminar Post</h1>
+    <hr>
+
+    <form method="post" action="/api/post/<%= post.id %>?_method=DELETE">
+        <ul>
+            <h2 class="display-4"><%= post.title %></h2>
+            <span class="lead" ><%= post.content %></span><br><br>
+            <img src="<%= post.img %>" alt="" height="300px" class="rounded"><br>
+            Autor: <%= post.author %> <%= post.createdAt.toLocaleString() %>
+        </ul>
+        <hr>
+        <h4>¿Esta seguro que quiere eliminar el post?</h4>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="../" class="btn btn-success">Cancelar</a>
+    </form>
+
+</body>
+</html>

@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>Editar Post</h1>
+    <h1 class="display-4">Editar Post</h1>
     <hr>
+    <script src="./js/validate.form.js"></script>
+
     <form method="post" action="/api/post/<%= post.id %>?_method=PUT">
-        <input type="text" name="title" value="<%= post.title %>" placeholder="@Titulo del post"><br>
-        <textarea name="content" id="" cols="30" rows="10"><%= post.content %></textarea><br>
-        <input type="text" name="img" value="<%= post.img %>" placeholder="@link de la imagen"><br>
-        <input type="text" name="author" value="<%= post.author %>" placeholder="@author"><br>
-        <button type="submit">Postear edicion</button>
+        <input type="text" name="title" value="<%= post.title %>" placeholder="@Titulo del post" class="form-control" id="a" required><br>
+        <textarea name="content" id="" cols="30" rows="10" class="form-control" placeholder="@Contenido a postear" id="b" required><%= post.content %></textarea><br>
+        <input type="text" name="img" value="<%= post.img %>" placeholder="@link de la imagen" class="form-control" id="d"><br>
+        <input type="text" name="author" value="<%= post.author %>" placeholder="@author" class="form-control" id="c" required><br>
+        <button type="submit" class="btn btn-success">Postear edicion</button>
+        <a href="../" class="btn btn-danger">Cancelar</a>
     </form>
 
 </body>

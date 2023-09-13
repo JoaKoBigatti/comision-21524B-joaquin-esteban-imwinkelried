@@ -12,8 +12,8 @@ const crearPost = async (req = request, res = response) => {
     res.redirect('/');
 }
 
-const listPosts=async(req=request,res=response)=>{
-    const allPosts=await PostModel.findAll()
+const listPosts = async (req = request, res = response) => {
+    const allPosts = await PostModel.findAll()
     res.json(allPosts);
 }
 
@@ -27,29 +27,30 @@ const acturalizarPost = async (req, res) => {
 
     const { title, content, author, img } = req.body;
     const post = { title, content, author, img };
-    
+
 
     try {
-      //acá haces el try, intentas actualizar el post.
+        //acá haces el try, intentas actualizar el post.
         const [updatedRows] = await PostModel.update(post, { where: { id: id } });
 
         //acá se verifica de nuevo Si no se actualizó ninguna fila, es posible que el ID no existe
         if (!updatedRows) {
-            return res.status(404).json({ error: 'No se encontró el post con ese ID', msg:id });
+            return res.status(404).json({ error: 'No se encontró el post con ese ID', msg: id });
         }
 
         return res.redirect('/');
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ error: 'Error al actualizar el post'});
+        return res.status(500).json({ error: 'Error al actualizar el post' });
     }
 };
 
-const borrarPost=async(req=request, res=response)=> {
-    const {id}=req.params;
+const borrarPost = async (req = request, res = response) => {
+    const { id } = req.params;
     PostModel.destroy({
-        where : {id:id}
+        where: { id: id }
     })
+    res.redirect('/')
 };
 
-module.exports={crearPost,listPosts,borrarPost,acturalizarPost}
+module.exports = { crearPost, listPosts, borrarPost, acturalizarPost }

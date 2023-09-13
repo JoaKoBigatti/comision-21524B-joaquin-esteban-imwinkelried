@@ -1,9 +1,11 @@
 # Elaboracion del foro en proceso,
 
-El foro ya permite la creacion, edicion y eliminacion de Posteos
+El foro ya permite crear, editar y eliminar Posteo
 
 
 Hay que crear el archivo .env indicando el puerto que corresponda, usuario y contraseña de MySQL tal como se ve en el .ejemplo.env
 
 
 Recordar que se debe ejecutar ```npm install``` para reconstruir los modulos de Node.
+
+Una vez ejecutado el servidorn, en la ruta "./src/models/server.js" linea 60, se debe cambiar el valor true del "sequelize.sync" a false para que  no siga forzando la creacion de la tabla MySQL, borrando todo lo que este guardado en la base de datos al recrearla.

@@ -1,9 +1,9 @@
 <li>
-    <h2><%= post.title %></h2>
-    <span><%= post.content %></span><br><br>
-    <img src="<%= post.img %>" alt="" height="300px"><br>
+    <h2 class="display-4"><%= post.title %></h2>
+    <span class="lead" ><%= post.content %></span><br><br>
+    <img src="<%= post.img %>" alt="" height="300px" class="rounded"><br>
     Autor: <%= post.author %> <%= post.createdAt.toLocaleString() %>
-    - <a href="/editarpost/<%= post.id %>">editar</a> -
-    <a href="/eliminarpost/<%= post.id %>">eliminar</a>
+    - <a href="/editarpost/<%= post.id %>" class="btn btn-info">editar</a> -
+    <a href="/eliminarpost/<%= post.id %>" class="btn btn-danger">eliminar</a>
 </li>
 <hr>

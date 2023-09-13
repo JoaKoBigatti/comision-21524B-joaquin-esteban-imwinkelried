@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <h1>Crear Post</h1>
+    <h1 class="display-4">Crear Post</h1>
     <hr>
-    <form action="/api/post" method="post">
-        <input type="text" name="title" placeholder="@Titulo del post"><br>
-        <textarea name="content" id="" cols="30" rows="10"></textarea><br>
-        <input type="text" name="img" placeholder="@link de la imagen"><br>
-        <input type="text" name="author" placeholder="@author"><br>
-        <button>Postear</button>
+    <script src="./js/validate.form.js"></script>
+
+    <form action="/api/post" method="post" name="Form" onsubmit="return validateForm()">
+        <input type="text" name="title" placeholder="@Titulo del post" class="form-control" id="a" required><br>
+        <textarea name="content" id="" cols="30" rows="10" class="form-control" placeholder="@Contenido a postear" id="b" required></textarea><br>
+        <input type="text" name="img" placeholder="@link de la imagen" class="form-control" id="d"><br>
+        <input type="text" name="author" placeholder="@author" class="form-control" id="c" required><br>
+        <button class="btn btn-success">Postear</button>
+        <a href="../" class="btn btn-danger">Cancelar</a>
     </form>
 </body>
 </html>
