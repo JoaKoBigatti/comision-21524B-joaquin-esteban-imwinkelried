@@ -1,5 +1,5 @@
 const express = require('express');
-const helmet = require('helmet');
+// const helmet = require('helmet');
 const cors = require('cors');
 const morgan = require('morgan');
 const { sequelize } = require('../database/config.db');
@@ -25,15 +25,15 @@ class Server {
     middlewares() {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: false }))
-        this.app.use(helmet({
-            contentSecurityPolicy: {
-                directives: {
-                    ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-                    "img-src": ["*"],
-                },
-            },
-        })
-        );
+        // this.app.use(helmet({
+        //     contentSecurityPolicy: {
+        //         directives: {
+        //             ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        //             "img-src": ["*"],
+        //         },
+        //     },
+        // })
+        // );
         this.app.use(methodOverride('_method'))
         this.app.use(cors());
         this.app.use(morgan('dev'));

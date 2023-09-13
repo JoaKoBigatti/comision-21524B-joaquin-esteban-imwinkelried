@@ -10,15 +10,16 @@
 <body>
     <h1 class="display-4">Crear Post</h1>
     <hr>
-    <script src="./js/validate.form.js"></script>
-
+    
     <form action="/api/post" method="post" name="Form" onsubmit="return validateForm()">
-        <input type="text" name="title" placeholder="@Titulo del post" class="form-control" id="a" required><br>
-        <textarea name="content" id="" cols="30" rows="10" class="form-control" placeholder="@Contenido a postear" id="b" required></textarea><br>
+        <input type="text" name="title" placeholder="@Titulo del post" class="form-control" id="a" ><br>
+        <textarea name="content" cols="30" rows="10" class="form-control" placeholder="@Contenido a postear" id="b" ></textarea><br>
         <input type="text" name="img" placeholder="@link de la imagen" class="form-control" id="d"><br>
-        <input type="text" name="author" placeholder="@author" class="form-control" id="c" required><br>
+        <input type="text" name="author" placeholder="@author" class="form-control" id="c" ><br>
         <button class="btn btn-success">Postear</button>
         <a href="../" class="btn btn-danger">Cancelar</a>
     </form>
+    
+    <script src="./js/validate.form.js"></script>
 </body>
 </html>

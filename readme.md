@@ -1,4 +1,4 @@
-# Bienvenidos al FORO de Joaquin Imwinkelried,
+# Bienvenidos al FORO de Joaquin Imwinkelried.
 
 El foro permite crear, editar y eliminar Posteos
 
