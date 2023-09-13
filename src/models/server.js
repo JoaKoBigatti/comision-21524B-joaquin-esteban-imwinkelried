@@ -25,7 +25,15 @@ class Server {
     middlewares() {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: false }))
-        this.app.use(helmet());
+        this.app.use(helmet({
+            contentSecurityPolicy: {
+                directives: {
+                    ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+                    "img-src": ["*"],
+                },
+            },
+        })
+        );
         this.app.use(methodOverride('_method'))
         this.app.use(cors());
         this.app.use(morgan('dev'));
