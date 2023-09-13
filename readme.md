@@ -1,6 +1,6 @@
-# Elaboracion del foro en proceso,
+# Bienvenidos al FORO de Joaquin Imwinkelried,
 
-El foro ya permite crear, editar y eliminar Posteo
+El foro permite crear, editar y eliminar Posteos
 
 
 Hay que crear el archivo .env indicando el puerto que corresponda, usuario y contraseña de MySQL tal como se ve en el .ejemplo.env
