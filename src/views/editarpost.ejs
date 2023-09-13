@@ -12,10 +12,10 @@
     <hr>
     
     <form action="/api/post/<%= post.id %>?_method=PUT" method="post" name="Form" onsubmit="return validateForm()">
-        <input type="text" name="title" value="<%= post.title %>" placeholder="@Titulo del post" class="form-control" id="a" ><br>
-        <textarea name="content" cols="30" rows="10" class="form-control" placeholder="@Contenido a postear" id="b" ><%= post.content %></textarea><br>
+        <input type="text" name="title" value="<%= post.title %>" placeholder="@Titulo del post" class="form-control" id="a" required><br>
+        <textarea name="content" cols="30" rows="10" class="form-control" placeholder="@Contenido a postear" id="b" required><%= post.content %></textarea><br>
         <input type="text" name="img" value="<%= post.img %>" placeholder="@link de la imagen" class="form-control" id="d"><br>
-        <input type="text" name="author" value="<%= post.author %>" placeholder="@author" class="form-control" id="c" ><br>
+        <input type="text" name="author" value="<%= post.author %>" placeholder="@author" class="form-control" id="c" required><br>
         <button class="btn btn-success">Postear</button>
         <a href="../" class="btn btn-danger">Cancelar</a>
     </form>
