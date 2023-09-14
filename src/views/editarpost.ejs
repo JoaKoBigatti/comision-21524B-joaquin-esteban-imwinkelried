@@ -10,6 +10,7 @@
 <body>
     <h1 class="display-4">Editar Post</h1>
     <hr>
+    <script src="../js/validate.form.js"></script>
     
     <form action="/api/post/<%= post.id %>?_method=PUT" method="post" name="Form" onsubmit="return validateForm()">
         <input type="text" name="title" value="<%= post.title %>" placeholder="@Titulo del post" class="form-control" id="a" required><br>
@@ -20,6 +21,5 @@
         <a href="../" class="btn btn-danger">Cancelar</a>
     </form>
     
-    <script src="../js/validate.form.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require("../database/config.db");
 
+//preparamos el modelo para la tabla de MySQL
 const PostModel = sequelize.define('posts', {
     title: {
         type: DataTypes.STRING,

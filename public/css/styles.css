@@ -6,8 +6,8 @@ body {
 
 body {
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: #fff2dd;  /* fallback for old browsers */
-    background: linear-gradient(to bottom, #fae388, #2e2a22); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #fff2dd; 
+    background: linear-gradient(to bottom, #fae388, #2e2a22); 
     background-attachment: fixed;
 	line-height: 1.4em;
 	color: #111111;
@@ -20,6 +20,7 @@ body {
 
 
 }
+
 h1 {
 	text-shadow:
 	  2px 2px 1px rgb(255, 255, 255);
